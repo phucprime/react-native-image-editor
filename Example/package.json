@@ -15,7 +15,7 @@
     "react-native": "0.72.7",
     "react-native-blob-util": "^0.19.4",
     "react-native-fs": "2.18.0",
-    "@thienmd/react-native-image-editor": "../"
+    "@phucprime/react-native-image-editor": "../"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

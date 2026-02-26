@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {Image} from 'react-native';
-import ImageEditor from '@thienmd/react-native-image-editor';
+import ImageEditor from '@phucprime/react-native-image-editor';
 import RNFS from 'react-native-fs';
 import RNFetchBlob from 'react-native-blob-util';
 
