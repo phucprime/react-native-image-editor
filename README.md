@@ -1,254 +1,247 @@
-<h1 align="center">
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/dsJXfHnUx0qvZIB_80F-q0iN18eIqmx6g10bmsVN8R6nEnLQDKvJ9lXCbnPCgDEZMw=s180" width="80" />
+</p>
+
+<h1 align="center">@phucprime/react-native-image-editor</h1>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/dsJXfHnUx0qvZIB_80F-q0iN18eIqmx6g10bmsVN8R6nEnLQDKvJ9lXCbnPCgDEZMw=s180"/>
+  Native image editor for React Native — crop, draw, add text, stickers, and more.
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@phucprime/react-native-image-editor"><img src="http://img.shields.io/npm/v/react-native-image-editor.svg?style=flat" /></a>
-  <a href="https://github.com/phucprime/react-native-image-editor/pulls"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" /></a>
-  <a href="https://github.com/phucprime/react-native-image-editor#License"><img src="https://img.shields.io/npm/l/react-native-image-editor.svg?style=flat" /></a>
+  <a href="https://www.npmjs.com/package/@phucprime/react-native-image-editor"><img src="https://img.shields.io/npm/v/@phucprime/react-native-image-editor.svg?style=flat-square" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/@phucprime/react-native-image-editor"><img src="https://img.shields.io/npm/dm/@phucprime/react-native-image-editor.svg?style=flat-square" alt="npm downloads" /></a>
+  <a href="https://github.com/phucprime/react-native-image-editor/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@phucprime/react-native-image-editor.svg?style=flat-square" alt="license" /></a>
+  <a href="https://github.com/phucprime/react-native-image-editor/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" /></a>
 </p>
 
-    ReactNative: Native Image Editor (Android/iOS)
+---
 
-If this project has helped you out, please support us with a star 🌟
+## Features
 
-</h1>
-This library is a React Native bridge around native photo editor libraries. It allows you to edit any photo by providing below set of features:
+- **Cropping** — Resize and reframe images
+- **Drawing** — Freehand drawing with color picker
+- **Text** — Add text overlays with custom colors
+- **Stickers** — Add image stickers from your app resources
+- **Scaling & Rotating** — Transform any added element
+- **Saving & Sharing** — Export edited images
 
-- _**Cropping**_
-- _**Adding Images -Stickers-**_
-- _**Adding Text with Colors**_
-- _**Drawing with Colors**_
-- _**Scaling and Rotating Objects**_
-- _**Deleting Objects**_
-- _**Saving to Photos and Sharing**_
-- _**Cool Animations**_
+## Demo
 
-# Introduction
+| iOS | Android |
+| :-: | :-: |
+| <img src="assets/ios.gif" width="300" /> | <img src="assets/android.gif" width="300" /> |
 
-`@phucprime/react-native-image-editor` is a fork of the deprecated `react-native-photo-editor`. The original library had not been updated for a while and had several limitations, including inconsistent user interfaces between iOS and Android.
+## Requirements
 
-Seeing the need for a more maintained and consistent library, I decided to fork `react-native-photo-editor` and create `@phucprime/react-native-image-editor`.
+| Platform | Minimum Version |
+| -------- | --------------- |
+| iOS      | 13.0            |
+| Android  | API 21 (5.0)    |
+| React Native | >= 0.60     |
 
-The main goals of this library are:
+## Installation
 
-- **Maintainability:** As the maintainer of this library, I aim to keep it up-to-date with the latest versions of React Native and the native photo editor libraries.
+```bash
+npm install @phucprime/react-native-image-editor
+# or
+yarn add @phucprime/react-native-image-editor
+```
 
-- **Consistency:** This library aims to provide a consistent user interface across both iOS and Android platforms. This not only provides a better user experience, but also makes it easier for developers to use.
+### iOS Setup
 
-## 📱 Demo
-
-| iOS                                      | Android                                      |
-| ---------------------------------------- | -------------------------------------------- |
-| <img src="assets/ios.gif" width="400" /> | <img src="assets/android.gif" width="400" /> |
-
-## Migrating from react-native-photo-editor
-
-If you're currently using `react-native-photo-editor` and want to switch to this library, you can follow these steps:
-
-1. **Uninstall the old library.** Run `npm uninstall react-native-photo-editor` or `yarn remove react-native-photo-editor`, depending on whether you're using npm or yarn.
-
-2. **Install this library.** Run `npm install @phucprime/react-native-image-editor` or `yarn add @phucprime/react-native-image-editor`.
-
-3. **Update your JavaScript files.** Replace all instances of `import PhotoEditor from 'react-native-photo-editor'` with `import ImageEditor from '@phucprime/react-native-image-editor'`.
-
-4. **Update your Podfile.** If you're using iOS, make the following changes in your Podfile:
-
-    Replace `pod 'RNPhotoEditor', :path => '../node_modules/react-native-photo-editor'` with `pod 'RNImageEditor', :path => '../node_modules/@phucprime/react-native-image-editor'`.
-
-    Replace `pod 'iOSPhotoEditor', :git => 'https://github.com/prscX/photo-editor', :branch => 'master'` with `pod 'iOSPhotoEditor', :git => 'https://github.com/phucprime/photo-editor', :branch => 'master'`.
-
-5. **Run `pod install`.** If you're using iOS, run `pod install` in your `ios` directory to install the new library.
-
-Please note that the API of this library might be different from `react-native-photo-editor`. Make sure to update your code to use the new API.
-
-## 📖 Getting started
-
-`$ yarn add @phucprime/react-native-image-editor`
-
-> This library is supported React Native V61 and above
-
-- **iOS**
-
-> **iOS Prerequisite:** Please make sure `CocoaPods` is installed on your system
-
-    - Add the following to your `Podfile` -> `ios/Podfile` and run pod update:
+1. Add to your `ios/Podfile`:
 
 ```ruby
-  use_native_modules!
+use_native_modules!
 
-  # Disable Flipper to avoid C++ header issues with newer Xcode versions
-  flipper_config = FlipperConfiguration.disabled
+# Required: Flipper must be disabled when using iOSPhotoEditor with use_frameworks!
+flipper_config = FlipperConfiguration.disabled
 
-  use_frameworks! :linkage => :static
-  pod "iOSPhotoEditor", :git => "https://github.com/phucprime/photo-editor", :branch => "master"
+use_frameworks! :linkage => :static
+pod "iOSPhotoEditor", :git => "https://github.com/phucprime/photo-editor", :branch => "master"
 
-  post_install do |installer|
-    installer.pods_project.targets.each do |target|
-      if target.name.include?('iOSPhotoEditor')
-        target.build_configurations.each do |config|
-          config.build_settings['SWIFT_VERSION'] = '5'
-        end
-      end
-    end
-  end
-```
-
-> **Note:** Flipper must be disabled (`FlipperConfiguration.disabled`) because `iOSPhotoEditor` requires `use_frameworks!`, and newer Xcode versions have C++ header incompatibilities with Flipper.
-
-- Add below property to your info.list
-
-```
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Application needs permission to write photos...</string>
-
-	<!-- If you are targeting devices running on iOS 10 or later, you'll also need to add: -->
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>iOS 10 needs permission to write photos...</string>
-```
-
-- **Android**
-
-1.  Add JitPack repository to both `buildscript` and `allprojects` in your root `android/build.gradle`:
-
-```groovy
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url "https://jitpack.io" }
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url "https://jitpack.io" }
-    }
-}
-```
-
-2.  **JDK 17 required:** AGP 7.x is incompatible with JDK 21 (bundled with newer Android Studio). Add this to `android/gradle.properties`:
-
-```properties
-org.gradle.java.home=/path/to/your/jdk-17
-```
-
-> On macOS with Homebrew: `/opt/homebrew/Cellar/openjdk@17/17.x.x/libexec/openjdk.jdk/Contents/Home`
-> Install if needed: `brew install openjdk@17`
-
-3.  **Gradle plugin Kotlin metadata fix:** If using Gradle 8.x with React Native 0.72, the bundled Kotlin stdlib (1.9.x) is newer than the gradle-plugin's Kotlin (1.7.x). Add `-Xskip-metadata-version-check` to `node_modules/@react-native/gradle-plugin/build.gradle.kts`:
-
-```kotlin
-tasks.withType<KotlinCompile> {
-  kotlinOptions {
-    // ...existing options...
-    freeCompilerArgs += listOf("-Xskip-metadata-version-check")
-  }
-}
-```
-
-4.  Add below activities in your `AndroidManifest.xml`:
-
-```xml
-<activity android:name="com.ahmedadeltito.photoeditor.PhotoEditorActivity" />
-<activity android:name="com.yalantis.ucrop.UCropActivity" />
-```
-
-5.  To save image to the public external storage, add to your manifest:
-
-```xml
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-```
-
-## ⛄️ Stickers
-
-If you want stickers, please add them to your native project:
-
-- **iOS:** Add stickers to iOS Resources folder
-- **Android:** Add stickers to app `drawable` folder
-
-> Refer Example project for the same.
-
-## 💻 Usage
-
-```
-import ImageEditor from '@phucprime/react-native-image-editor'
-
-ImageEditor.Edit({
-    path: RNFS.DocumentDirectoryPath + "/photo.jpg"
-});
-```
-
-> - Purpose of this library is to edit photos which are within app sandbox, we recommend to move captured image to app sandbox then using RNFS share image path with library for the edit.
-
-> - Example: If we capture image through cameraRoll then we should first move image to app sandbox using RNFS then share app storage path with the editor.
-
-## 💡 Props
-
-- **General(iOS & Android)**
-
-| Prop              | Type               | Default                                                                                                                 | Note                                                                                       |
-| ----------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| `path: mandatory` | `string`           |                                                                                                                         | Specify image path you want to edit                                                        |
-| `hiddenControls`  | `array`            |                                                                                                                         | Specify editor controls you want to hide `[clear, crop, draw, save, share, sticker, text]` |
-| `stickers`        | `array`            |                                                                                                                         | Specify stickers you want to show in stickers picker                                       |
-| `languages`       | `object`           |                                                                                                                         | Specify languages you want to show in text editor                                          |
-| `colors`          | `array: HEX-COLOR` | `[#000000, #808080, #a9a9a9, #FFFFFF, #0000ff, #00ff00, #ff0000, #ffff00, #ffa500, #800080, #00ffff, #a52a2a, #ff00ff]` | Specify colors you want to show for draw/text                                              |
-| `onDone`          | `func`             |                                                                                                                         | Specify done callback                                                                      |
-| `onCancel`        | `func`             |                                                                                                                         | Specify cancel callback                                                                    |
-
-## 🔧 Troubleshooting
-
-### If using React Native Firebase v6+ or facing any of the following issues: [#104](https://github.com/phucprime/react-native-image-editor/issues/104), [#93](https://github.com/phucprime/react-native-image-editor/issues/93)
-
-- Add the following to your `podfile -> ios/podfile` and run `pod install`
-
-```
-pre_install do |installer|
-  installer.pod_targets.each do |pod|
-    if pod.name.start_with?('RNFB')
-      def pod.build_type;
-        Pod::BuildType.static_library
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name.include?('iOSPhotoEditor')
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '5'
       end
     end
   end
 end
 ```
 
-- If the above doesn't work, try the following and and re-run `pod install`:
+2. Run `pod install` in the `ios/` directory.
 
-As [@react-native-firebase documentation](https://rnfirebase.io/#allow-ios-static-frameworks) you should add following to top of the Podfile for Allow iOS Static Frameworks
+3. Add to `Info.plist`:
 
+```xml
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>Allow access to save edited photos</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Allow access to select photos for editing</string>
 ```
+
+### Android Setup
+
+1. Add JitPack repository to your root `android/build.gradle`:
+
+```groovy
+allprojects {
+    repositories {
+        // ...existing repos...
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+
+2. Add activities to `AndroidManifest.xml`:
+
+```xml
+<activity android:name="com.ahmedadeltito.photoeditor.PhotoEditorActivity" />
+<activity android:name="com.yalantis.ucrop.UCropActivity" />
+```
+
+3. For saving to external storage:
+
+```xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
+
+4. **JDK 17 required** (AGP 7.x is incompatible with JDK 21). Add to `android/gradle.properties`:
+
+```properties
+org.gradle.java.home=/path/to/your/jdk-17
+```
+
+> macOS Homebrew: `brew install openjdk@17`, then use `/opt/homebrew/Cellar/openjdk@17/<version>/libexec/openjdk.jdk/Contents/Home`
+
+## Usage
+
+### Promise-based (recommended)
+
+```typescript
+import { ImageEditor } from '@phucprime/react-native-image-editor';
+
+try {
+  const editedPath = await ImageEditor.edit('/path/to/image.jpg', {
+    colors: ['#ff0000', '#00ff00', '#0000ff'],
+    stickers: ['sticker1', 'sticker2'],
+  });
+  console.log('Edited image saved to:', editedPath);
+} catch (error) {
+  console.log('Editor was cancelled');
+}
+```
+
+### Callback-based
+
+```typescript
+import { ImageEditor } from '@phucprime/react-native-image-editor';
+
+ImageEditor.open({
+  path: '/path/to/image.jpg',
+  onDone: (editedPath) => {
+    console.log('Edited image saved to:', editedPath);
+  },
+  onCancel: (resultCode) => {
+    console.log('Editor cancelled with code:', resultCode);
+  },
+});
+```
+
+> **Tip:** Use [react-native-fs](https://github.com/itinance/react-native-fs) to copy images into the app sandbox before editing.
+
+## API Reference
+
+### `ImageEditor.edit(path, options?): Promise<string>`
+
+Opens the editor and returns a promise with the edited image path.
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `path` | `string` | Path to the image file to edit |
+| `options` | `object` | Optional configuration (see below) |
+
+### `ImageEditor.open(config): void`
+
+Opens the editor with callback-based API.
+
+### Configuration
+
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+| `path` | `string` | *required* | Path to the image file |
+| `colors` | `string[]` | 13 default colors | Hex color strings for draw/text palette |
+| `stickers` | `string[]` | `[]` | Sticker image names from native resources |
+| `hiddenControls` | `EditorControl[]` | `[]` | Controls to hide: `'text'`, `'clear'`, `'draw'`, `'save'`, `'share'`, `'sticker'`, `'crop'` |
+| `languages` | `ImageEditorLanguage` | English defaults | UI localization strings |
+| `onDone` | `(path: string) => void` | — | Callback when editing completes |
+| `onCancel` | `(code: number) => void` | — | Callback when editing is cancelled |
+
+## Stickers
+
+Add sticker images to your native project:
+
+- **iOS:** Add to the Resources folder
+- **Android:** Add to the `drawable` folder
+
+See the [Example](Example/) project for reference.
+
+## Migrating from react-native-photo-editor
+
+```diff
+- import PhotoEditor from 'react-native-photo-editor';
++ import { ImageEditor } from '@phucprime/react-native-image-editor';
+
+- PhotoEditor.Edit({ path: imagePath, onDone: handleDone });
++ ImageEditor.open({ path: imagePath, onDone: handleDone });
+// or use the Promise API:
++ const result = await ImageEditor.edit(imagePath);
+```
+
+Update your iOS `Podfile`:
+
+```diff
+- pod 'RNPhotoEditor', :path => '../node_modules/react-native-photo-editor'
++ pod 'RNImageEditor', :path => '../node_modules/@phucprime/react-native-image-editor'
+- pod 'iOSPhotoEditor', :git => 'https://github.com/prscX/photo-editor'
++ pod 'iOSPhotoEditor', :git => 'https://github.com/phucprime/photo-editor'
+```
+
+## Troubleshooting
+
+### React Native Firebase v6+
+
+If using Firebase with `use_frameworks!`, add to your `Podfile`:
+
+```ruby
 $RNFirebaseAsStaticFramework = true
 ```
 
-### [**swift*FORCE_LOAD*$\_swiftUniformTypeIdentifiers / **swift*FORCE_LOAD*$\_swiftCoreMIDI](https://github.com/phucprime/react-native-image-editor/issues/171)
+### Kotlin Metadata Version Mismatch (Gradle 8.x + RN 0.72)
 
-## ✨ Credits
+Add `-Xskip-metadata-version-check` to `node_modules/@react-native/gradle-plugin/build.gradle.kts`:
 
-- Android Image Editor: [eventtus/photo-editor-android](https://github.com/eventtus/photo-editor-android)
-- iOS Image Editor: [eventtus/photo-editor](https://github.com/eventtus/photo-editor)
-- react-native-photo-editor: [prscX/react-native-photo-editor](https://github.com/prscX/react-native-photo-editor)
+```kotlin
+tasks.withType<KotlinCompile> {
+  kotlinOptions {
+    freeCompilerArgs += listOf("-Xskip-metadata-version-check")
+  }
+}
+```
 
-## 🤔 How to contribute
+## Credits
 
-Have an idea? Found a bug? Please raise to [ISSUES](https://github.com/phucprime/react-native-image-editor/issues).
-Contributions are welcome and are greatly appreciated! Every little bit helps, and credit will always be given.
+- Android Photo Editor: [eventtus/photo-editor-android](https://github.com/eventtus/photo-editor-android)
+- iOS Photo Editor: [eventtus/photo-editor](https://github.com/eventtus/photo-editor)
+- Original library: [prscX/react-native-photo-editor](https://github.com/prscX/react-native-photo-editor)
 
-## 💫 Where is this library used?
+## Contributing
 
-If you are using this library in one of your projects, add it in this list below. ✨
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## 💖 Support my projects
+## License
 
-I open-source almost everything I can, and I try to reply everyone needing help using these projects. Obviously, this takes time. You can integrate and use these projects in your applications for free! You can even change the source code and redistribute (even resell it).
-
-However, if you get some profit from this or just want to encourage me to continue creating stuff, there are few ways you can do it:
-
-- Starring and sharing the projects you like 🚀
-- If you're feeling especially charitable, please follow [prscX](https://github.com/prscX) on GitHub.
+[Apache 2.0](LICENSE)

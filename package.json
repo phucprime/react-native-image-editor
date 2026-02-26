@@ -1,25 +1,73 @@
 {
   "name": "@phucprime/react-native-image-editor",
-  "version": "0.6.5",
-  "description": "React Native: Native Image Editor",
-  "main": "index.tsx",
-  "homepage": "https://github.com/phucprime/react-native-image-editor.git",
+  "version": "1.0.0",
+  "description": "React Native: Native Image Editor for iOS and Android with drawing, text, stickers, cropping and more",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index.ts",
+  "files": [
+    "src/",
+    "lib/",
+    "ios/",
+    "android/",
+    "react-native-image-editor.podspec",
+    "!android/build/",
+    "!ios/build/",
+    "!**/__tests__/"
+  ],
+  "homepage": "https://github.com/phucprime/react-native-image-editor#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/phucprime/react-native-image-editor.git"
+    "url": "git+https://github.com/phucprime/react-native-image-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phucprime/react-native-image-editor/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --project tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "prettier --check src/",
+    "format": "prettier --write src/",
+    "clean": "rm -rf lib/",
+    "prepare": "npm run clean && npm run build",
+    "release": "npm run prepare && npm publish --access public"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "image-editor",
+    "photo-editor",
+    "image",
+    "photo",
+    "editor",
+    "crop",
+    "draw",
+    "sticker",
+    "text",
+    "ios",
+    "android"
   ],
   "author": "phucprime",
-  "devDependencies": {
-    "@types/react": "^17.0.11",
-    "@types/react-native": "^0.64.10",
-    "typescript": "^4.3.4",
-    "prettier": "^2.3.1"
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-native": ">=0.60.0"
   },
-  "license": "Apache License 2.0"
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    },
+    "react-native": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-native": "^0.72.0",
+    "prettier": "^3.2.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }

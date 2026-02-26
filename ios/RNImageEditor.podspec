@@ -12,11 +12,15 @@ Pod::Spec.new do |s|
   s.author = package["author"]
   s.source = { :git => "https://github.com/phucprime/react-native-image-editor.git", :tag => s.version }
 
-  s.platform = :ios, "9.0"
-  s.ios.deployment_target = "8.0"
+  s.platforms = { :ios => "13.0" }
 
   s.preserve_paths = "LICENSE", "package.json"
-  s.source_files = "**/*.{h,m}"
-  s.dependency "React"
+  s.source_files = "**/*.{h,m,mm}"
   s.dependency "iOSPhotoEditor"
+
+  if respond_to?(:install_modules_dependencies, true)
+    install_modules_dependencies(s)
+  else
+    s.dependency "React-Core"
+  end
 end

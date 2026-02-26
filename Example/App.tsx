@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {Image} from 'react-native';
-import ImageEditor from '@phucprime/react-native-image-editor';
+import {ImageEditor} from '@phucprime/react-native-image-editor';
 import RNFS from 'react-native-fs';
 import RNFetchBlob from 'react-native-blob-util';
 
@@ -16,7 +16,7 @@ type Props = {
 
 export default class App extends Component<Props> {
   _onPress = () => {
-    ImageEditor.Edit({
+    ImageEditor.open({
       path: RNFS.DocumentDirectoryPath + '/photo1.jpg',
       stickers: [
         'sticker0',

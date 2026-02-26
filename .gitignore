@@ -1,18 +1,21 @@
 
 # OSX
-#
 .DS_Store
+.AppleDouble
+.LSOverride
 
-# node.js
-#
+# Node
 node_modules/
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
 package-lock.json
 yarn.lock
 
+# Build output
+lib/
+
 # Xcode
-#
 build/
 *.pbxuser
 !default.pbxuser
@@ -22,29 +25,46 @@ build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
+xcuserdata/
 *.xccheckout
 *.moved-aside
-DerivedData
+DerivedData/
 *.hmap
 *.ipa
 *.xcuserstate
-project.xcworkspace
+*.xcworkspace
+!Example/ios/*.xcworkspace
 
-
-# Android/IntelliJ
-#
-build/
-.idea
-.gradle
+# Android / IntelliJ
+.idea/
+.gradle/
 local.properties
 *.iml
+*.hprof
+.cxx/
+
+# CocoaPods
+ios/Pods/
+ios/Podfile.lock
+Example/ios/Pods/
+Example/ios/Podfile.lock
 
 # BUCK
 buck-out/
 \.buckd/
 *.keystore
+!debug.keystore
 
-.history/*
-ios/Pods/*
-ios/Podfile.lock
+# Turborepo
+.turbo/
+
+# Editor
+.vscode/
+.history/
+*.swp
+*.swo
+*~
+
+# Misc
+*.log
+*.tsbuildinfo

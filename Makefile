@@ -1,22 +1,29 @@
-# create git tag
-VERSION := 0.7.0
-GIT_COMMIT_MESSAGE := "Update features and fix bugs"
-.PHONY: all git-push-all tag npm-version npm-publish
+.PHONY: all build clean lint format release tag git-push
 
-npm-version:
-	@echo "Updating version..."
-	@jq '.version = "$(VERSION)"' package.json > "tmp.json" && mv "tmp.json" package.json
-	
+VERSION := $(shell node -p "require('./package.json').version")
+
+build:
+	npm run build
+
+clean:
+	npm run clean
+
+lint:
+	npm run lint
+
+format:
+	npm run format
+
 tag:
-	git tag -a $(VERSION) -m "Release $(VERSION)"
-	git push origin $(VERSION)
+	git tag -a v$(VERSION) -m "Release v$(VERSION)"
+	git push origin v$(VERSION)
 
-git-push-all:
+git-push:
 	git add .
-	git commit -m $(GIT_COMMIT_MESSAGE)
+	git commit -m "chore: release v$(VERSION)"
 	git push origin master
 
-all: git-push-all tag npm-version npm-publish
+release: build
+	npm publish --access public
 
-npm-publish:
-	npm publish
+all: git-push tag release
