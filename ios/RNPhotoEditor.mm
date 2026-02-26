@@ -1,6 +1,10 @@
 
 #import "RNPhotoEditor.h"
 
+#ifdef RCT_NEW_ARCH_ENABLED
+#import <RNPhotoEditorSpec/RNPhotoEditorSpec.h>
+#endif
+
 
 @implementation RNPhotoEditor
 
@@ -159,5 +163,13 @@ RCT_EXPORT_METHOD(Edit:(nonnull NSDictionary *)props onDone:(RCTResponseSenderBl
     return [UIColor colorWithRed: red green: green blue: blue alpha: alpha];
 }
 
+
+#ifdef RCT_NEW_ARCH_ENABLED
+- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
+    (const facebook::react::ObjCTurboModule::InitParams &)params
+{
+    return std::make_shared<facebook::react::NativeRNPhotoEditorSpecJSI>(params);
+}
+#endif
 
 @end

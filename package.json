@@ -69,5 +69,13 @@
   },
   "engines": {
     "node": ">=16.0.0"
+  },
+  "codegenConfig": {
+    "name": "RNPhotoEditorSpec",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "ui.photoeditor"
+    }
   }
 }

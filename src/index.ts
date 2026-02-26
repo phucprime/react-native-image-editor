@@ -1,6 +1,6 @@
 import { NativeModules, Platform } from 'react-native';
 
-const { RNPhotoEditor } = NativeModules;
+const RNPhotoEditor = NativeModules.RNPhotoEditor;
 
 /**
  * Localization strings for the image editor UI.
@@ -123,8 +123,7 @@ const DEFAULT_LANGUAGES: Required<ImageEditorLanguage> = {
     'To attach photos, we need to access media on your device',
   continueTxt: 'Continue',
   notNow: 'NOT NOW',
-  mediaAccessDeniedMsg:
-    'You denied storage access, no photos will be added.',
+  mediaAccessDeniedMsg: 'You denied storage access, no photos will be added.',
   saveImageSucceed: 'Image saved',
   eraserTitle: 'Eraser',
 };

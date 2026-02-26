@@ -9,13 +9,14 @@ import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.BaseActivityEventListener;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import java.util.ArrayList;
 
-public class RNPhotoEditorModule extends ReactContextBaseJavaModule {
+public class RNPhotoEditorModule extends RNPhotoEditorSpec {
+
+    public static final String NAME = "RNPhotoEditor";
 
     private static final int PHOTO_EDITOR_REQUEST = 1;
     private static final String E_PHOTO_EDITOR_CANCELLED = "E_PHOTO_EDITOR_CANCELLED";
@@ -53,7 +54,7 @@ public class RNPhotoEditorModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "RNPhotoEditor";
+        return NAME;
     }
 
     @ReactMethod
