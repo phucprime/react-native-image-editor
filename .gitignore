@@ -68,3 +68,4 @@ buck-out/
 # Misc
 *.log
 *.tsbuildinfo
+_codeql_detected_source_root
