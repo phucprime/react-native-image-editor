@@ -1,6 +1,14 @@
 import { NativeModules, Platform } from 'react-native';
 
-const { RNPhotoEditor } = NativeModules;
+// Support both New Architecture (interop layer) and Old Architecture (NativeModules bridge).
+// In RN 0.78+, NativeModules works through the TurboModule interop layer in bridgeless mode.
+const RNPhotoEditor = NativeModules.RNPhotoEditor;
+if (!RNPhotoEditor) {
+  throw new Error(
+    '@phucprime/react-native-image-editor: NativeModule RNPhotoEditor is null. ' +
+      'Make sure the native module is properly linked.',
+  );
+}
 
 /**
  * Localization strings for the image editor UI.
@@ -123,8 +131,7 @@ const DEFAULT_LANGUAGES: Required<ImageEditorLanguage> = {
     'To attach photos, we need to access media on your device',
   continueTxt: 'Continue',
   notNow: 'NOT NOW',
-  mediaAccessDeniedMsg:
-    'You denied storage access, no photos will be added.',
+  mediaAccessDeniedMsg: 'You denied storage access, no photos will be added.',
   saveImageSucceed: 'Image saved',
   eraserTitle: 'Eraser',
 };
