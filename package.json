@@ -1,6 +1,6 @@
 {
   "name": "@phucprime/react-native-image-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Native: Native Image Editor for iOS and Android with drawing, text, stickers, cropping and more",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
