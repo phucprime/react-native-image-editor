@@ -1260,7 +1260,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-image-editor (1.0.0):
+  - react-native-image-editor (1.0.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1841,7 +1841,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: 86e068fae064bbd3f24781d6ae5445b0266b2a10
   React-microtasksnativemodule: fd98e3e44af51599576705ec7a85a36e35978913
   react-native-blob-util: 775b994555980f1687e3fd918a4e6d0044aaeb39
-  react-native-image-editor: e1e5df66aa328321573af577dca561a84d676861
+  react-native-image-editor: b17d04d5d56041980fb284afdec8b862d775ed22
   React-NativeModulesApple: 5c61cef9e7f0e1d6216ff0af41a3b882806a5cec
   React-perflogger: 5f8fa36a8e168fb355efe72099efe77213bc2ac6
   React-performancetimeline: 4f3521ee6238c9caf1b0969da2c4f610ff72b922

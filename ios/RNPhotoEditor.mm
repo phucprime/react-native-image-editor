@@ -4,13 +4,14 @@
 #import <RNPhotoEditorSpec/RNPhotoEditorSpec.h>
 #endif
 
-@interface RCT_EXTERN_MODULE (RNPhotoEditor, NSObject)
+@interface RCT_EXTERN_MODULE(RNPhotoEditor, NSObject)
 
-RCT_EXTERN_METHOD(Edit : (NSDictionary *)props onDone : (RCTResponseSenderBlock)
-                      onDone onCancel : (RCTResponseSenderBlock)onCancel)
+RCT_EXTERN_METHOD(Edit:(NSDictionary *)props
+                  onDone:(RCTResponseSenderBlock)onDone
+                  onCancel:(RCTResponseSenderBlock)onCancel)
 
 + (BOOL)requiresMainQueueSetup {
-  return YES;
+    return YES;
 }
 
 @end

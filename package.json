@@ -1,6 +1,6 @@
 {
   "name": "@phucprime/react-native-image-editor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Native: Native Image Editor for iOS and Android with drawing, text, stickers, cropping and more",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -49,9 +49,17 @@
   ],
   "author": "phucprime",
   "license": "Apache-2.0",
+  "codegenConfig": {
+    "name": "RNPhotoEditorSpec",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "ui.photoeditor"
+    }
+  },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-native": ">=0.60.0"
+    "react": ">=18.2.0",
+    "react-native": ">=0.73.0"
   },
   "peerDependenciesMeta": {
     "react": {

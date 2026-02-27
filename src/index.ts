@@ -1,14 +1,9 @@
-import { NativeModules, Platform } from 'react-native';
+import NativeRNPhotoEditor from './NativeRNPhotoEditor';
 
-// Support both New Architecture (interop layer) and Old Architecture (NativeModules bridge).
-// In RN 0.78+, NativeModules works through the TurboModule interop layer in bridgeless mode.
-const RNPhotoEditor = NativeModules.RNPhotoEditor;
-if (!RNPhotoEditor) {
-  throw new Error(
-    '@phucprime/react-native-image-editor: NativeModule RNPhotoEditor is null. ' +
-      'Make sure the native module is properly linked.',
-  );
-}
+// TurboModuleRegistry.getEnforcing handles both architectures:
+// - New Architecture: Uses TurboModule system directly
+// - Old Architecture: Falls back to NativeModules bridge (RN 0.73+)
+const RNPhotoEditor = NativeRNPhotoEditor;
 
 /**
  * Localization strings for the image editor UI.
